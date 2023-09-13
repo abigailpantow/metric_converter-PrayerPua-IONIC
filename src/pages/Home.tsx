@@ -13,13 +13,13 @@ import {
   IonButton,
 } from "@ionic/react";
 import "./Home.css";
-import Panjang from "./Panjang";
-import MenuSuhu from "./Suhu";
-import Massa from "./Massa";
-import Waktu from "./Waktu";
-import ArusListrik from "./ArusListrik";
-import IntensitasCahaya from "./IntensitasCahaya";
-import JumlahZat from "./JumblahZat";
+import Panjang from "./metricPanjang";
+import MenuSuhu from "./metricSuhu";
+import Massa from "./metricMassa";
+import Waktu from "./metricWaktu";
+import ArusListrik from "./metricArusListrik";
+import IntensitasCahaya from "./metricIntensitasCahaya";
+import JumlahZat from "./metricJumblahZat";
 import { useState } from "react";
 
 const Home: React.FC = () => {
@@ -27,16 +27,16 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="test">
         <IonToolbar>
           <IonTitle class="ion-text-center">Metric Converter</IonTitle>
-          <p className="ion-text-center ion-no-margin">
-            By: Abigail Hadasa Wina Pantow
-          </p>
+          <p className="ion-text-center ion-no-margin">By : Prayer Pua</p>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <p className="container">Pilih metric : </p>
+        <p className="container ion-text-center ion-no-margin">
+          Pilih Satuan Metric :
+        </p>
         <IonList>
           <IonItem>
             <IonSelect
@@ -46,10 +46,11 @@ const Home: React.FC = () => {
               <IonSelectOption value="panjang">Panjang</IonSelectOption>
               <IonSelectOption value="massa">Massa</IonSelectOption>
               <IonSelectOption value="suhu">Suhu</IonSelectOption>
+              <IonSelectOption value="zat">Jumblah Zat</IonSelectOption>
               <IonSelectOption value="waktu">Waktu</IonSelectOption>
-              <IonSelectOption value="Jumlah">Jumlah Zat</IonSelectOption>
               <IonSelectOption value="arus">Arus Listrik</IonSelectOption>
               <IonSelectOption value="cahaya">
+                {" "}
                 Intensitas Cahaya
               </IonSelectOption>
             </IonSelect>

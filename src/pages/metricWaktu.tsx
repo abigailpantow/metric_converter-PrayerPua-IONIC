@@ -32,7 +32,7 @@ const Waktu: React.FC = () => {
 
   return (
     <>
-      <p>Dari :</p>
+      <p className="dari"> Dari :</p>
       <IonList>
         <IonItem>
           <IonSelect
@@ -47,7 +47,7 @@ const Waktu: React.FC = () => {
         </IonItem>
       </IonList>
 
-      <p>Ke :</p>
+      <p className="dari"> Ke :</p>
       <IonList inset={true}>
         <IonItem>
           <IonSelect

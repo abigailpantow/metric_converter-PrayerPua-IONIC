@@ -5,7 +5,6 @@ import {
   IonSelectOption,
   IonButton,
   IonInput,
-  IonText,
 } from "@ionic/react";
 import "./Home.css";
 import { useState } from "react";
@@ -31,7 +30,7 @@ const IntensitasCahaya: React.FC = () => {
 
   return (
     <>
-      <p>Dari :</p>
+      <p className="dari"> Dari :</p>
       <IonList>
         <IonItem>
           <IonSelect
@@ -53,7 +52,7 @@ const IntensitasCahaya: React.FC = () => {
         </IonItem>
       </IonList>
 
-      <p>Ke :</p>
+      <p className="dari">Ke :</p>
       <IonList>
         <IonItem>
           <IonSelect

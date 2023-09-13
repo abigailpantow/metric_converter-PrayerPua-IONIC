@@ -32,7 +32,7 @@ const Massa: React.FC = () => {
 
   return (
     <>
-      <p>Dari :</p>
+      <p className="dari"> Dari :</p>
       <IonList>
         <IonItem>
           <IonSelect
@@ -51,7 +51,7 @@ const Massa: React.FC = () => {
         </IonItem>
       </IonList>
 
-      <p>Ke :</p>
+      <p className="dari"> Ke :</p>
       <IonList>
         <IonItem>
           <IonSelect

@@ -5,20 +5,19 @@ import {
   IonSelectOption,
   IonButton,
   IonInput,
-  IonText,
 } from "@ionic/react";
 import "./Home.css";
 import { useState } from "react";
 
-const JumlahZat: React.FC = () => {
+const ArusListrik: React.FC = () => {
   const [dari, asal] = useState("");
   const [ke, tujuan] = useState("");
   const [angka, bilangan] = useState(0);
   const [hasil, result] = useState(0);
 
   const jumblah = () => {
-    const satuan = ["mol", "mol/L", "mol/m³", "mol/g"];
-    const kali = [1, 1 / 1000, 1 / 1000000, 1 / 1000000000];
+    const satuan = ["A", "mA", "μA", "nA"];
+    const kali = [1, 1000, 1000000, 1000000000];
 
     const a = satuan.findIndex((i) => i === dari);
     const b = satuan.findIndex((i) => i === ke);
@@ -32,42 +31,34 @@ const JumlahZat: React.FC = () => {
 
   return (
     <>
-      <p>Dari :</p>
+      <p className="dari"> Dari :</p>
       <IonList>
         <IonItem>
           <IonSelect
-            aria-label="jumlah zat"
+            aria-label="arus listrik"
             placeholder="Pilih Satuan"
             onIonChange={(e) => asal(e.target.value)}
           >
-            <IonSelectOption value="mol">Mol</IonSelectOption> <br />
-            <IonSelectOption value="mol/L">Mol per liter</IonSelectOption>{" "}
-            <br />
-            <IonSelectOption value="mol/m³">
-              Mol per meter kubik
-            </IonSelectOption>{" "}
-            <br />
-            <IonSelectOption value="mol/g">Mol per gram</IonSelectOption> <br />
+            <IonSelectOption value="A">Ampere</IonSelectOption> <br />
+            <IonSelectOption value="mA">miliampere</IonSelectOption> <br />
+            <IonSelectOption value="μA">mikroampere</IonSelectOption> <br />
+            <IonSelectOption value="nA">nanoampere</IonSelectOption> <br />
           </IonSelect>
         </IonItem>
       </IonList>
 
-      <p>Ke :</p>
+      <p className="dari"> Ke :</p>
       <IonList>
         <IonItem>
           <IonSelect
-            aria-label="jumlah zat"
+            aria-label="arus listrik"
             placeholder="Pilih Satuan"
             onIonChange={(e) => tujuan(e.target.value)}
           >
-            <IonSelectOption value="mol">Mol</IonSelectOption> <br />
-            <IonSelectOption value="mol/L">Mol per liter</IonSelectOption>{" "}
-            <br />
-            <IonSelectOption value="mol/m³">
-              Mol per meter kubik
-            </IonSelectOption>{" "}
-            <br />
-            <IonSelectOption value="mol/g">Mol per gram</IonSelectOption> <br />
+            <IonSelectOption value="A">Ampere</IonSelectOption> <br />
+            <IonSelectOption value="mA">miliampere</IonSelectOption> <br />
+            <IonSelectOption value="μA">mikroampere</IonSelectOption> <br />
+            <IonSelectOption value="nA">nanoampere</IonSelectOption> <br />
           </IonSelect>
         </IonItem>
       </IonList>
@@ -90,4 +81,4 @@ const JumlahZat: React.FC = () => {
   );
 };
 
-export default JumlahZat;
+export default ArusListrik;
