@@ -11,12 +11,12 @@ import "./Home.css";
 import { useState } from "react";
 
 const Massa: React.FC = () => {
-  const [dari, setDari] = useState("");
-  const [ke, setKe] = useState("");
-  const [angka, setAngka] = useState(0);
-  const [hasil, setHasil] = useState(0);
+  const [dari, asal] = useState("");
+  const [ke, tujuan] = useState("");
+  const [angka, bilangan] = useState(0);
+  const [hasil, result] = useState(0);
 
-  const hitung = () => {
+  const jumblah = () => {
     const metrik = ["mg", "cg", "dg", "g", "dag", "hg", "kg"];
     const kali = [1, 10, 100, 1000, 10000, 100000, 1000000];
 
@@ -24,9 +24,9 @@ const Massa: React.FC = () => {
     const b = metrik.findIndex((i) => i === ke);
 
     if (a - b < 0) {
-      setHasil(angka / kali[Math.abs(a - b)]);
+      result(angka / kali[Math.abs(a - b)]);
     } else {
-      setHasil(angka * kali[Math.abs(a - b)]);
+      result(angka * kali[Math.abs(a - b)]);
     }
   };
 
@@ -38,7 +38,7 @@ const Massa: React.FC = () => {
           <IonSelect
             aria-label="massa"
             placeholder="Pilih Satuan"
-            onIonChange={(e) => setDari(e.target.value)}
+            onIonChange={(e) => asal(e.target.value)}
           >
             <IonSelectOption value="mg">mililigram</IonSelectOption> <br />
             <IonSelectOption value="cg">centigram</IonSelectOption> <br />
@@ -57,7 +57,7 @@ const Massa: React.FC = () => {
           <IonSelect
             aria-label="massa"
             placeholder="Pilih Satuan"
-            onIonChange={(e) => setKe(e.target.value)}
+            onIonChange={(e) => tujuan(e.target.value)}
           >
             <IonSelectOption value="mg">mililigram</IonSelectOption> <br />
             <IonSelectOption value="cg">centigram</IonSelectOption> <br />
@@ -76,12 +76,12 @@ const Massa: React.FC = () => {
         fill="outline"
         type="number"
         placeholder="Masukan angka"
-        onIonInput={(e: any) => setAngka(parseInt(e.target.value))}
+        onIonInput={(e: any) => bilangan(parseInt(e.target.value))}
       ></IonInput>
-      <IonButton expand="block" color="primary" onClick={() => hitung()}>
+      <IonButton expand="block" color="primary" onClick={() => jumblah()}>
         Convert
       </IonButton>
-      <p className="hasil">
+      <p className="total">
         Hasil : {hasil} {ke}
       </p>
     </>

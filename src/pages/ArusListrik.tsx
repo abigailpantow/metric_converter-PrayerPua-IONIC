@@ -10,18 +10,18 @@ import {
 import "./Home.css";
 import { useState } from "react";
 
-const Waktu: React.FC = () => {
+const ArusListrik: React.FC = () => {
   const [dari, asal] = useState("");
   const [ke, tujuan] = useState("");
   const [angka, bilangan] = useState(0);
   const [hasil, result] = useState(0);
 
   const jumblah = () => {
-    const metrik = ["s", "m", "h"];
-    const kali = [1, 60, 3600];
+    const satuan = ["A", "mA", "μA", "nA"];
+    const kali = [1, 1000, 1000000, 1000000000];
 
-    const a = metrik.findIndex((i) => i === dari);
-    const b = metrik.findIndex((i) => i === ke);
+    const a = satuan.findIndex((i) => i === dari);
+    const b = satuan.findIndex((i) => i === ke);
 
     if (a - b < 0) {
       result(angka / kali[Math.abs(a - b)]);
@@ -36,28 +36,30 @@ const Waktu: React.FC = () => {
       <IonList>
         <IonItem>
           <IonSelect
-            aria-label="waktu"
+            aria-label="arus listrik"
             placeholder="Pilih Satuan"
             onIonChange={(e) => asal(e.target.value)}
           >
-            <IonSelectOption value="s">sekon</IonSelectOption> <br />
-            <IonSelectOption value="m">menit</IonSelectOption> <br />
-            <IonSelectOption value="h">jam</IonSelectOption> <br />
+            <IonSelectOption value="A">Ampere</IonSelectOption> <br />
+            <IonSelectOption value="mA">miliampere</IonSelectOption> <br />
+            <IonSelectOption value="μA">mikroampere</IonSelectOption> <br />
+            <IonSelectOption value="nA">nanoampere</IonSelectOption> <br />
           </IonSelect>
         </IonItem>
       </IonList>
 
       <p>Ke :</p>
-      <IonList inset={true}>
+      <IonList>
         <IonItem>
           <IonSelect
-            aria-label="waktu"
+            aria-label="arus listrik"
             placeholder="Pilih Satuan"
             onIonChange={(e) => tujuan(e.target.value)}
           >
-            <IonSelectOption value="s">sekon</IonSelectOption> <br />
-            <IonSelectOption value="m">menit</IonSelectOption> <br />
-            <IonSelectOption value="h">jam</IonSelectOption> <br />
+            <IonSelectOption value="A">Ampere</IonSelectOption> <br />
+            <IonSelectOption value="mA">miliampere</IonSelectOption> <br />
+            <IonSelectOption value="μA">mikroampere</IonSelectOption> <br />
+            <IonSelectOption value="nA">nanoampere</IonSelectOption> <br />
           </IonSelect>
         </IonItem>
       </IonList>
@@ -80,4 +82,4 @@ const Waktu: React.FC = () => {
   );
 };
 
-export default Waktu;
+export default ArusListrik;
