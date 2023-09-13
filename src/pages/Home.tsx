@@ -47,6 +47,7 @@ const Home: React.FC = () => {
               <IonSelectOption value="massa">Massa</IonSelectOption>
               <IonSelectOption value="suhu">Suhu</IonSelectOption>
               <IonSelectOption value="waktu">Waktu</IonSelectOption>
+              <IonSelectOption value="Jumlah">Jumlah Zat</IonSelectOption>
               <IonSelectOption value="arus">Arus Listrik</IonSelectOption>
               <IonSelectOption value="cahaya">
                 Intensitas Cahaya
